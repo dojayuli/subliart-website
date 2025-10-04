@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practica</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <a href="../index.html">
+            <img
+              src="../images/subliarthorizontal.png"
+              alt="Logo de la empresa"
+            />
+          </a>
+        </div>
+        <div class="nav-links">
+          <a href="../index.html">Inicio</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#nosotros">Nosotros</a>
+          <a href="./contact">Contacto</a>
+        </div>
+      </nav>
+
+      <h1>Practica</h1>
+    </header>
+    <main>
+      <section>Contacto</section>
+      <form
+        action="https://formspree.io/f/mnnbkjrz"
+        class="fs-form"
+        target="_top"
+        method="POST"
+      >
+        <div class="fs-field">
+          <label class="fs-label" for="name">Name</label>
+          <input class="fs-input" id="name" name="name" required />
+        </div>
+        <div class="fs-field">
+          <label class="fs-label" for="email">Email Address</label>
+          <input class="fs-input" id="email" name="email" required />
+        </div>
+        <div class="fs-field">
+          <label class="fs-label" for="number">Phone Number</label>
+          <input class="fs-input" id="number" name="number" />
+        </div>
+        <div class="fs-field">
+          <label class="fs-label" for="message">Inquiry Message</label>
+          <textarea
+            class="fs-textarea"
+            id="message"
+            name="message"
+            required
+          ></textarea>
+        </div>
+
+        <div class="fs-button-group">
+          <button class="fs-button" type="submit">Submit</button>
+        </div>
+      </form>
+    </main>
+    <footer>
+      <p>Diseño Yuli</p>
+      <nav>
+        <ul>
+          <li>Instagram</li>
+          <li>Facebook</li>
+          <li>LinkedIn</li>
+          <li>GitHub</li>
+        </ul>
+      </nav>
+      <p>&copy; 2023 Practica. Todos los derechos reservados.</p>
+    </footer>
+  </body>
+</html>
