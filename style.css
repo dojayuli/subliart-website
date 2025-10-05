@@ -166,6 +166,9 @@ body {
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card img {
@@ -175,6 +178,40 @@ body {
   display: block;
 }
 
+/* Para tablets */
+@media (max-width: 768px) {
+  .container-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  /* Mantiene el aspect ratio en tablets */
+  .card {
+    aspect-ratio: 1 / 1;
+  }
+}
+
+/* Para celulares */
+@media (max-width: 480px) {
+  .container-cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 15px;
+  }
+
+  /* En móviles, usamos contain para que la imagen completa sea visible */
+  .card {
+    aspect-ratio: 1 / 1;
+    background-color: white;
+    padding: 10px; /* padding interno para dar espacio */
+  }
+
+  .card img {
+    object-fit: contain; /* Cambia a contain en móviles */
+    width: 100%;
+    height: 100%;
+  }
+}
 /* Botón ver más */
 .btn-view-more {
   background-color: #e94e1b;
@@ -374,7 +411,7 @@ body {
 }
 
 .servicios-image img {
-  max-width: 450px; /* Tamaño intermedio */
+  max-width: 450px;
   width: 100%;
   height: auto;
   border-radius: 15px;
@@ -401,11 +438,7 @@ body {
   color: #555;
 }
 
-/* Reutilizamos .nosotros-list y .check-icon que ya tienes definidos */
-
-/* ========================================
-   RESPONSIVE SERVICIOS
-   ======================================== */
+/* RESPONSIVE SERVICIOS */
 @media (max-width: 768px) {
   .servicios-content {
     flex-direction: column;
@@ -588,5 +621,319 @@ footer {
     flex-direction: column;
     gap: 10px;
     text-align: center;
+  }
+}
+
+.page-header {
+  text-align: center;
+  padding: 60px 20px 40px;
+  background-color: #10718b;
+  color: #e8d7c9;
+}
+
+.page-header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #e8d7c9;
+}
+
+.page-header .subtitle {
+  font-size: 1.2rem;
+  color: rgba(232, 215, 201, 0.9);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Intro del contacto */
+.contact-intro {
+  text-align: center;
+  padding: 60px 20px 30px;
+  background-color: #e0f2f8;
+}
+
+.contact-intro h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #10718b;
+  margin-bottom: 15px;
+}
+
+.contact-intro p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Formulario principal */
+.fs-form {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 50px 40px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  position: relative;
+  top: -30px;
+}
+
+/* Campos del formulario */
+.fs-field {
+  margin-bottom: 25px;
+}
+
+.fs-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #333;
+}
+
+.fs-input,
+.fs-textarea {
+  width: 100%;
+  padding: 14px 16px;
+  background-color: #f8f9fa;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  color: #333;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
+}
+
+.fs-input:focus,
+.fs-textarea:focus {
+  outline: none;
+  border-color: #10718b;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(16, 113, 139, 0.1);
+}
+
+.fs-textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.fs-input::placeholder,
+.fs-textarea::placeholder {
+  color: #999;
+}
+
+/* Select */
+select.fs-input {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+/* Grupo de botones */
+.fs-button-group {
+  margin-top: 35px;
+  text-align: center;
+}
+
+/* Botón de envío */
+.fs-button {
+  padding: 16px 50px;
+  background-color: #e94e1b;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  box-shadow: 0 5px 15px rgba(233, 78, 27, 0.3);
+}
+
+.fs-button:hover {
+  background-color: #f59b35;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(233, 78, 27, 0.4);
+}
+
+.fs-button:active {
+  transform: translateY(-1px);
+}
+
+/* Nota del formulario */
+.form-note {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #999;
+  font-style: italic;
+}
+
+/* Alternativas de contacto */
+.contact-alternatives {
+  background-color: #e8d7c9;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.contact-alternatives h3 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #e94e1b;
+  margin-bottom: 50px;
+}
+
+.contact-options {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.contact-card {
+  background-color: white;
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: block;
+}
+
+.contact-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.contact-card .icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.contact-card h4 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #10718b;
+  margin-bottom: 10px;
+}
+
+.contact-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Colores específicos para cada tarjeta */
+.contact-card.whatsapp:hover {
+  border-top: 4px solid #25d366;
+}
+
+.contact-card.email:hover {
+  border-top: 4px solid #e94e1b;
+}
+
+.contact-card.location:hover {
+  border-top: 4px solid #10718b;
+}
+
+/* Link activo en nav */
+.nav-links a.active {
+  color: #f59b35;
+  font-weight: 600;
+}
+
+/* ========================================
+   RESPONSIVE CONTACTO
+   ======================================== */
+@media (max-width: 768px) {
+  .page-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .page-header .subtitle {
+    font-size: 1rem;
+  }
+
+  .contact-intro h2 {
+    font-size: 1.8rem;
+  }
+
+  .fs-form {
+    padding: 30px 25px;
+    margin: 0 20px;
+  }
+
+  .contact-options {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .contact-alternatives {
+    padding: 60px 20px;
+  }
+
+  .contact-alternatives h3 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-header {
+    padding: 40px 20px 30px;
+  }
+
+  .page-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .page-header .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .fs-form {
+    padding: 25px 20px;
+    margin: 0 15px;
+  }
+
+  .fs-button {
+    width: 100%;
+    padding: 14px 30px;
+  }
+
+  .contact-card {
+    padding: 30px 20px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
   }
 }
